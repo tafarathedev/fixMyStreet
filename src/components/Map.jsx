@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
-import { MdCenterFocusWeak } from 'react-icons/md';
+
 
 const center ={
   lat: -3.741,
@@ -22,6 +22,31 @@ const points =[
 ];
 
 function MyComponent() {
+//state management
+const [userLocation, setUserLocation] = useState(null);
+
+
+//get useer function
+const getUserLocation = () => { 
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+          // what to do once we have the position
+          const { latitude, longitude } = position.coords;
+          setUserLocation({ lat:latitude, lng:longitude });
+          <MarkerF position={userLocation} />
+           
+      },
+      (error) => {
+          // display an error if we cant get the users position
+          console.error('Error getting user location:', error);
+      }
+  );
+  }
+ };
+
+ getUserLocation()
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyDjR9t5dDhxozWMViMD-KKDf9B34ZBoNxc" //AIzaSyDjR9t5dDhxozWMViMD-KKDf9B34ZBoNxc
@@ -44,7 +69,7 @@ function MyComponent() {
   return isLoaded ? (
       <GoogleMap
        mapContainerClassName='h-[89vh]'
-        center={MdCenterFocusWeak}
+        center={userLocation}
         zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
@@ -56,7 +81,7 @@ function MyComponent() {
         
         {
           points.map((point , i)=>{
-             return  <MarkerF position={point}></MarkerF>
+             return  <MarkerF position={userLocation}></MarkerF>
           })
        } 
         { /* Child components, such as markers, info windows, etc. */ }
