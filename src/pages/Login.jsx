@@ -8,7 +8,7 @@ const Login = () => {
  //stat management
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
- //const [agree, setAgree] = useState(false);
+ const [agree, setAgree] = useState(false);
  const [loading, setLoading] = useState(false);
  const [error, setError] = useState("");
  //const [showPassword, setShowPassword] = useState(false);
@@ -28,23 +28,26 @@ const navigate = useNavigate() //react router dom
          try {
            setLoading(true);//set laoding to run before and while loading
                     // Make the axios call using async/await syntax
-                    const res = await axios.post("/login", { email, password });
-                
+                    const res = await axios.post("/login", { email, password , agree });
+                   const token = res.data.token
+                   const user_id = res.data.user._id
+                   const status = res.status
+                   const user_name = `${res.data.firstName}  ${res.data.lastName} `
                     // If the response data exists and signIn is successful, navigate to the homepage and reload the page
-                  if (res.data && signIn({
-                    token: res.data.token,
-                    type: "Bearer",
-                    userState: {
-                      uid:res.data.user._id,
-                    
-                    },
-                })) {
-                  navigate("/");
-                  window.location.reload();
-                } else {
-                  // If signIn is unsuccessful, stop the loading spinner
-                  setLoading(false);
-                }
+                 //check if success state is 200 OK code 
+                  if(status === 200){
+                    signIn({
+                      auth: { token:token, type:"Bearer"},
+                      userState: {name:user_name , uid: user_id}
+                    })
+                    navigate("/");
+                    window.location.reload();
+                  }else{
+                    navigate("/login");
+                   
+                  }
+                 
+               
         } catch (error) {
               // If there's an error, set the error state and log the error message
               setError(error.message);
@@ -67,7 +70,7 @@ const navigate = useNavigate() //react router dom
     return (
        <>
        <Navbar/>
-       <div className='h-screen flex justify-center items-center bg-[#f2f2f2]'>
+       <div className='h-[89vh] flex justify-center items-center bg-[#f2f2f2]'>
         
         <div
        className="relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10">
@@ -84,7 +87,7 @@ const navigate = useNavigate() //react router dom
                    <label htmlFor="email" className='text-black font-bold text-lg'>Email :</label>
                     <input
                         onChange={event => setEmail(event.target.value)}
-                     type="email" name="email" placeholder='eg: someone@gmail.com' id="" className="p-3 rounded-sm bg-[#ccc] text-black " />
+                     type="email" name="email" placeholder='eg: someone@gmail.com' id="" className="p-3 rounded-sm bg-[#ccc] text-black " autoComplete='false' aria-autocomplete='off'/>
                    </div>
 
                    {/* password section */}
@@ -95,7 +98,7 @@ const navigate = useNavigate() //react router dom
                 className='text-black font-bold text-lg'>Password :</label>
                 <input
                   onChange={event => setPassword(event.target.value)}
-                type="password" name="password" placeholder='eg: 1234...' id="" className="p-3 rounded-sm bg-[#ccc] text-black " />
+                type="password" name="password" placeholder='eg: 1234...' id="" className="p-3 rounded-sm bg-[#ccc] text-black " autoComplete='off' />
                </div>
              {/*   <div className='my-4'>
                     <input
