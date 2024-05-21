@@ -34,7 +34,7 @@ const getUserLocation = () => {
           // what to do once we have the position
           const { latitude, longitude } = position.coords;
           setUserLocation({ lat:latitude, lng:longitude });
-          <MarkerF position={userLocation} />
+          <MarkerF position={center} />
            
       },
       (error) => {
@@ -69,7 +69,7 @@ const getUserLocation = () => {
   return isLoaded ? (
       <GoogleMap
        mapContainerClassName='h-[89vh]'
-        center={userLocation}
+        center={center}
         zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
@@ -81,7 +81,7 @@ const getUserLocation = () => {
         
         {
           points.map((point , i)=>{
-             return  <MarkerF position={userLocation}></MarkerF>
+             return  <MarkerF position={point}></MarkerF>
           })
        } 
         { /* Child components, such as markers, info windows, etc. */ }
