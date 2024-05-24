@@ -1,0 +1,184 @@
+{
+    "reports":[
+        {
+          "title": "Abandoned Vehicle Found",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 1, 2024",
+          "time": "10:00 AM",
+          "category": "Abandoned vehicles",
+          "coords": {
+            "lat": -15.416,
+            "lng": 28.277
+          }
+        },
+        {
+          "title": "Bus Stop Sign Damaged",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 2, 2024",
+          "time": "11:30 AM",
+          "category": "Bus stops",
+          "coords": {
+            "lat": -15.420,
+            "lng": 28.283
+          }
+        },
+        {
+          "title": "Car Park Full - Overflowing",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 3, 2024",
+          "time": "2:00 PM",
+          "category": "Car parking",
+          "coords": {
+            "lat": -15.413,
+            "lng": 28.279
+          }
+        },
+        {
+          "title": "Dog Fouling in the Park",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 4, 2024",
+          "time": "3:45 PM",
+          "category": "Dog fouling",
+          "coords": {
+            "lat": -15.419,
+            "lng": 28.288
+          }
+        },
+        {
+          "title": "Flyposting Notice on Public Wall",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 5, 2024",
+          "time": "4:30 PM",
+          "category": "Flyposting",
+          "coords": {
+            "lat": -15.424,
+            "lng": 28.271
+          }
+        },
+        {
+          "title": "Flytipping in Alleyway",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 6, 2024",
+          "time": "5:15 PM",
+          "category": "Flytipping",
+          "coords": {
+            "lat": -15.430,
+            "lng": 28.263
+          }
+        },
+        {
+          "title": "Graffiti Tagging on Street Lamp",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 7, 2024",
+          "time": "8:00 PM",
+          "category": "Graffiti",
+          "coords": {
+            "lat": -15.410,
+            "lng": 28.285
+          }
+        },
+        {
+          "title": "Litter Found in Park",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 8, 2024",
+          "time": "9:30 AM",
+          "category": "Rubbish (refuse and recycling)",
+          "coords": {
+            "lat": -15.404,
+            "lng": 28.292
+          }
+        },
+        {
+          "title": "Pavement Cracks and Uneven Surface",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 9, 2024",
+          "time": "10:45 AM",
+          "category": "Pavements/footpaths",
+          "coords": {
+            "lat": -15.421,
+            "lng": 28.268
+          }
+        },
+        {
+          "title": "Pothole on Main Road",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 10, 2024",
+          "time": "1:15 PM",
+          "category": "Potholes",
+          "coords": {
+            "lat": -15.425,
+            "lng": 28.280
+          }
+        },
+        {
+          "title": "Public Toilet Blocked",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 11, 2024",
+          "time": "3:00 PM",
+          "category": "Public toilets",
+          "coords": {
+            "lat": -15.408,
+            "lng": 28.274
+          }
+        },
+        {
+          "title": "Roadside Litter Needs Cleaning",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 12, 2024",
+          "time": "4:45 PM",
+          "category": "Street cleaning",
+          "coords": {
+            "lat": -15.414,
+            "lng": 28.278
+          }
+        },
+        {
+          "title": "Street Light Not Working",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 13, 2024",
+          "time": "6:30 PM",
+          "category": "Street lighting",
+          "coords": {
+            "lat": -15.403,
+            "lng": 28.287
+          }
+        },
+        {
+          "title": "Street Nameplate Missing",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 14, 2024",
+          "time": "7:45 AM",
+          "category": "Street nameplates",
+          "coords": {
+            "lat": -15.415,
+            "lng": 28.268
+          }
+        },
+        {
+          "title": "Traffic Lights Not Functioning",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 15, 2024",
+          "time": "9:00 AM",
+          "category": "Traffic lights",
+          "coords": {
+            "lat": -15.422,
+            "lng": 28.276
+          }
+        },
+        {
+          "title": "Tree Branch Blocking Sidewalk",
+          "image": "https://via.placeholder.com/150",
+          "date": "May 16, 2024",
+          "time": "10:30 AM",
+          "category": "Trees",
+          "coords": {
+            "lat": -15.411,
+            "lng": 28.270
+          }
+        }
+      ]
+      
+      
+}
+
+

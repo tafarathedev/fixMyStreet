@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
 import Navbar from '../components/Navbar';
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
  //stat management
  const [email, setEmail] = useState("");
@@ -21,9 +24,10 @@ const navigate = useNavigate() //react router dom
           if(email && password){
               setEmail(email)
               setPassword(password)
+              console.log("logged in")   
           }
          
-          console.log(email , password)
+          
          
          try {
            setLoading(true);//set laoding to run before and while loading
@@ -40,6 +44,19 @@ const navigate = useNavigate() //react router dom
                       auth: { token:token, type:"Bearer"},
                       userState: {name:user_name , uid: user_id}
                     })
+                    setTimeout(() => {
+                      toast.success(error, {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: 1,
+                        theme: "dark",
+                        transition: Slide,
+                        });
+                    }, 3000);
                     navigate("/");
                     window.location.reload();
                   }else{
@@ -111,6 +128,19 @@ const navigate = useNavigate() //react router dom
                     </div>
                    <div className="my-6">
                        <button type="button"  onClick={handleSignInWithEmail} className=" w-full rounded-md bg-primary  px-3 py-4 text-white focus:bg-gray-600 focus:outline-none">{loading? "Loading" : 'Sign In'}</button>
+                       <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        limit={1}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                        transition:Slide/><ToastContainer/>
                    </div>
                    <p className="text-center text-sm text-gray-500">Don&#x27;t have an account yet?
                        <a href="#!"

@@ -19,8 +19,8 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage/>}/>
       <Route path="/*" element={<NotFound/>}/>
-      <Route path="/local_area_reports" element={<LocalAreaReports/>}/>
-      <Route path="/local_area_reports/id" element={<LocalAreaReportId/>}/>
+      <Route path="/local_area_reports" exact element={<LocalAreaReports/>}/>
+      <Route path="/local_area_reports/:id" element={<LocalAreaReportId/>}/>
       <Route path="/help" element={<Help/>}/>
       <Route path="/account/me" element={<MyAccountPage/>}/>
       <Route path='/login' element={<Login/>} />
